@@ -1,0 +1,45 @@
+description: "Compare Nova Pro vs Nova Micro on career questions"
+
+providers:
+  - exec:python3 invoke_bedrock_agent_Nova_Pro.py
+  - exec:python3 invoke_bedrock_agent_Nova_Micro.py
+
+prompts:
+  - "Tell me about Shusei Yokoi's {{topic}}"
+
+tests:
+  - description: "Contains basic info"
+    vars:
+      topic: "background"
+    assert:
+      - type: icontains
+        value: "data scientist"
+      - type: icontains
+        value: "bay area"
+
+  - description: "Contains education info"
+    vars:
+      topic: "education"
+    assert:
+      - type: contains-any
+        value: ["California", "Polytechnic", "GPA", "3.63", "Business Administration"]
+
+  - description: "Contains work experience"
+    vars:
+      topic: "work experience"
+    assert:
+      - type: icontains
+        value: "softbank"
+      - type: contains-any
+        value: ["customer", "analytics", "project", "machine learning"]
+
+  - description: "Contains certifications"
+    vars:
+      topic: "certifications"
+    assert:
+      - type: contains-any
+        value: ["AWS", "certified", "certification", "AI Practitioner", "CompTIA", "IBM"]
+
+evaluateOptions:
+  maxConcurrency: 1
+  delay: 3000
