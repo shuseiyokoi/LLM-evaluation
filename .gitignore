@@ -1,2 +1,3 @@
-*.py
+aws-model-eval/invoke_bedrock_agent_Nova_Pro.py
+aws-model-eval/invoke_bedrock_agent_Nova_Micro.py
 Makefile
