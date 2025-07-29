@@ -78,7 +78,7 @@ aws configure
 
 ### 4. Update Agent IDs
 
-Edit the Python scripts `invoke_bedrock_agent_Nova_Pro.py` and `invoke_bedrock_agent_Nova_Micro.py`:
+Edit the Python scripts `example_invoke_agent.py`:
 
 ```python
 AGENT_ID = "your-nova-agent-id"
@@ -114,7 +114,7 @@ open nova-report.html
 description: "Compare Nova Pro vs Nova Micro on career questions"
 
 providers:
-  - exec:python3 invoke_bedrock_agent_Nova_Pro.py
+  - exec:python3 invoke_bedrock_agent_Nova_Pro.py // I tested two models so there are two invoke function
   - exec:python3 invoke_bedrock_agent_Nova_Micro.py
 
 prompts:
