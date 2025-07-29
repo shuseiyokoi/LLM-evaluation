@@ -153,6 +153,11 @@ tests:
 | Errors        | 0         |
 | **Pass Rate** | ✅ 100%    |
 
+
+<img width="1196" height="631" alt="image (8)" src="https://github.com/user-attachments/assets/c46fe8af-778a-4aae-9674-20902a968cf1" />
+
+
+
 ### 🔍 Observations
 
 * Both Nova Pro and Micro perform excellently for RAG tasks
